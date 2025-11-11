@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- in mobile set initial zoom level of page to 100%, set site size to equal device width not a larger canvas that is shrunk down-->
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Earbuds Promotional Page</title>
+    <!-- Link to reset or normalize before main.css
+    only choose one -->
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="full-width-grid-con">
+        <div class="col-start-2 col-end-3">
+            <div class="content">
+                <h1>Cosmic Sound Halo</h1>
+                <p>
+                    Meet the Cosmic Sound Halo. Engineered for balance, clarity, and depth, 
+                    Halo delivers a listening experience that feels effortless — yet extraordinary. 
+                    With adaptive acoustic tuning and precision-built drivers, every note stays true to its source. 
+                    Quiet comfort meets lasting performance — so you can focus on what matters most: the sound.
+                </p>
+                </div>
+        </div>   
+        <div class="col-span-full">
+            <canvas id="explode-view"></canvas> 
+        </div>                         
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
