@@ -1,0 +1,14 @@
+p {
+    color: #fff;
+    font-size: 34px;
+    line-height: 44px;
+  }
+  
+  body {
+    background: #000;
+  }
+  
+  #explode-view {
+    max-width: 100%;
+    /* width: 100vw; */
+  }/*# sourceMappingURL=main.css.map */
