@@ -12,3 +12,76 @@ p {
     max-width: 100%;
     /* width: 100vw; */
   }/*# sourceMappingURL=main.css.map */
+
+  #xray {
+    position: relative;
+    aspect-ratio: 16/10;
+    background-image: url(../images/earbud.jpg);
+    background-size: cover;
+    border-radius: 15px;
+  }
+  
+  #divisor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    aspect-ratio: 16/10;
+    background-image: url(../images/earbud-x-ray.jpg);
+    background-size: cover;
+    width: 50%;
+    height: 100%;
+    border-radius: 15px;
+  }
+  #divisor::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 6px;
+    height: 100%;
+    background-color: #fff;
+  }
+  
+  input[type=range] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(100% + 20px);
+    height: 20px;
+    background: transparent;
+  }
+  
+  input[type=range]::-webkit-slider-runnable-track {
+    height: 0;
+    background: transparent;
+    border: none;
+  }
+  
+  input[type=range]::-moz-range-track {
+    height: 0;
+    background: transparent;
+    border: none;
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type=range]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }/*# sourceMappingURL=main.css.map */
