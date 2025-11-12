@@ -5,8 +5,62 @@ p {
   }
   
   body {
-    background: #ffffff;
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
   }
+
+  header {
+    background-color: #111;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  header p {
+    margin: 0.2rem 0 0;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #5c5959;
+  }
+  
+  nav {
+    background-color: #0b20ba;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+  }
+  
+  nav a {
+    color: #2f2b2b;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  
+  main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    text-align: center;
+  }
+  
+  footer {
+    background-color: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+  }
+
   model-viewer {
     width: auto;
     max-width: 1200px;
