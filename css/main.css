@@ -1,0 +1,161 @@
+p {
+    color: #fff;
+    font-size: 34px;
+    line-height: 44px;
+  }
+  
+  body {
+    background: #000;
+  }
+  model-viewer {
+    width: auto;
+    max-width: 1200px;
+    height: 700px;
+    background-color: #ffffff;
+    margin: 0 auto;
+  }
+  
+  .Hotspot {
+    background: url(../images/vecteezy_yellow-lightning-bolt-icon-on-circular-background-with-3d_69096699.png) center no-repeat;
+    background-size: 95%;
+    border: 0;
+    cursor: pointer;
+    width: 45px;
+    height: 39px;
+    transition: all 1s ease-in-out;
+  }
+  
+
+  .Hotspot:not([data-visibility-attribute]) {
+    opacity: 0;
+    width: 45px;
+    height: 38px;
+    pointer-events: none;
+  }
+  
+  .Hotspot:focus {
+    border: 4px solid rgb(0, 128, 200);
+    height: 32px;
+    outline: none;
+    width: 32px;
+  }
+  
+  .HotspotAnnotation {
+    visibility: hidden;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    color: rgba(0, 0, 0, 0.8);
+    display: block;
+    font-family: Futura, Helvetica Neue, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    left: calc(100% + 1em);
+    max-width: 200px;
+    overflow-wrap: break-word;
+    padding: 0.5em 1em;
+    position: absolute;
+    top: 50%;
+    width: max-content;
+    text-align: left;
+  }
+  
+  .HotspotAnnotation p {
+    color: #333;
+    line-height: 22px;
+    font-weight: 300;
+  }
+  
+  .HotspotAnnotation h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  } 
+
+    /* Progress */
+    model-viewer::part(default-progress-bar) {
+      height: 30px;
+      background-color: #E89B36;
+    }
+    
+    model-viewer::part(default-progress-mask) {
+      display: none;
+  
+    }/*# sourceMappingURL=main.css.map */
+  
+  #explode-view {
+    max-width: 100%;
+    /* width: 100vw; */
+  }/*# sourceMappingURL=main.css.map */
+
+  #xray {
+    position: relative;
+    aspect-ratio: 16/10;
+    background-image: url(../images/earbud.jpg);
+    background-size: cover;
+    border-radius: 15px;
+  }
+  
+  #divisor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    aspect-ratio: 16/10;
+    background-image: url(../images/earbud-x-ray.jpg);
+    background-size: cover;
+    width: 50%;
+    height: 100%;
+    border-radius: 15px;
+  }
+  #divisor::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 6px;
+    height: 100%;
+    background-color: #fff;
+  }
+  
+  input[type=range] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(100% + 20px);
+    height: 20px;
+    background: transparent;
+  }
+  
+  input[type=range]::-webkit-slider-runnable-track {
+    height: 0;
+    background: transparent;
+    border: none;
+  }
+  
+  input[type=range]::-moz-range-track {
+    height: 0;
+    background: transparent;
+    border: none;
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type=range]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }/*# sourceMappingURL=main.css.map */
