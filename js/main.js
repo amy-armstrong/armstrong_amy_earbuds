@@ -33,7 +33,7 @@
     canvas.height = 1080;
 
     //How many still frames do we have, you will need to adjust this
-    const frameCount = 450; 
+    const frameCount = 236; 
 
     //array to hold our images
     const images = [];
@@ -51,13 +51,13 @@
     //Run a for loop to populate images array
     for (let i=0; i<frameCount; i++) {
         const img = new Image();
-        img.src = `images/explode_${(i+1).toString().padStart(4, '0')}.webp`;
+        img.src = `images/cosmic_earbuds${(i+1).toString().padStart(3, '0')}.webp`;
         images.push(img);
     }
     console.log(images);
 
     gsap.to(buds, {
-        frame: 449,
+        frame: 236,
         snap: "frame",
         scrollTrigger: {
             trigger: "#explode-view",
