@@ -144,7 +144,7 @@ p {
   #xray {
     position: relative;
     aspect-ratio: 16/10;
-    background-image: url(../images/earbuds-xray5.png);
+    background-image: url(../images/earbuds-xray.png);
     background-size: cover;
     border-radius: 15px;
   }
@@ -154,7 +154,7 @@ p {
     top: 0;
     left: 0;
     aspect-ratio: 16/10;
-    background-image: url(../images/earbuds-xray1.png);
+    background-image: url(../images/earbuds-xray5.png);
     background-size: cover;
     width: 50%;
     height: 100%;
