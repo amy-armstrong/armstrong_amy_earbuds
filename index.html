@@ -2,37 +2,130 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <!-- in mobile set initial zoom level of page to 100%, set site size to equal device width not a larger canvas that is shrunk down-->
-    <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <title>Earbuds Promotional Page</title>
-    <!-- Link to reset or normalize before main.css
-    only choose one -->
-    <link href="css/grid.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, width=device-width">
+  <title>Cosmic Sounds — Halo Earbuds</title>
+  <link rel="stylesheet" href="css/grid.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    <div class="full-width-grid-con">
-        <div class="col-start-2 col-end-3">
-            <div class="content">
-                <h1>Cosmic Sound Halo</h1>
-                <p>
-                    Meet the Cosmic Sound Halo. Engineered for balance, clarity, and depth, 
-                    Halo delivers a listening experience that feels effortless — yet extraordinary. 
-                    With adaptive acoustic tuning and precision-built drivers, every note stays true to its source. 
-                    Quiet comfort meets lasting performance — so you can focus on what matters most: the sound.
-                </p>
-                </div>
-        </div>   
-        <div class="col-span-full">
-            <canvas id="explode-view"></canvas> 
-        </div>                         
-    </div>
+  <div class="site">
+    <header class="head">
+      <div class="logo">
+        <h1>Cosmic Sounds</h1>
+        <p>Experience your music like never before.</p>
+      </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
-    <script src="js/main.js"></script>
+      <nav id="main-menu">
+        <h2 class="hidden">Main Navigation</h2>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#features">Features</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section id="home" class="one-item md-one-item lg-one-item">
+        <h2>Welcome to Cosmic Sounds</h2>
+        <p>Experience your music like never before.</p>
+      </section>
+
+      <section id="products" class="two-items md-two-items lg-two-items">
+        <div class="content">
+          <h2>Cosmic Sound Halo</h2>
+          <p>
+            Meet the Cosmic Sound Halo — engineered for balance, clarity, and depth. 
+            Halo delivers a listening experience that feels effortless yet extraordinary. 
+            With adaptive acoustic tuning and precision-built drivers, every note stays true to its source. 
+            Quiet comfort meets lasting performance — so you can focus on what matters most: the sound.
+          </p>
+        </div>
+
+        <div>
+          <canvas id="explode-view"></canvas>
+        </div>
+      </section>
+
+      <section id="features" class="two-items md-two-items lg-two-items">
+        <div class="content">
+          <h2>Inside the Tech</h2>
+          <p>
+            Your ultimate earbuds experience starts here. 
+            Explore our 3D models, internal components, and immersive sound quality.
+          </p>
+        </div>
+
+        <div id="xray">
+          <div id="divisor"></div>
+          <input type="range" min="0" max="100" value="50" id="slider">
+        </div>
+      </section>
+
+      <section class="one-item md-one-item lg-one-item">
+        <div class="content">
+          <h2>Halo Buds</h2>
+          <p>Check out the innovative features of our latest Halo Pods.</p>
+        </div>
+
+        <model-viewer id="model" 
+          src="model/earbuds.glb"
+          camera-controls
+          tone-mapping="neutral"
+          poster="images/poster.webp"
+          shadow-intensity="1"
+          exposure="1.7"
+          environment-image="images/aircraft_workshop_01_1k.hdr">
+
+          <button class="Hotspot" slot="hotspot-1" data-position="-10.909943128872948m 20.155882275595552m -2.1910943656423716m"
+            data-normal="0.09298874876324785m 0.435755841014398m 0.8952485351148476m"
+            data-visibility-attribute="visible">
+            <span class="HotspotAnnotation" id="hotspot-1"></span>
+          </button>
+
+          <button class="Hotspot" slot="hotspot-2" data-position="-10.298127586058435m 22.105992371741152m -8.00153119605012m"
+            data-normal="-0.774790312222615m 0.46145446072383095m -0.43215709269206876m"
+            data-visibility-attribute="visible">
+            <span class="HotspotAnnotation" id="hotspot-2"></span>
+          </button>
+
+          <button class="Hotspot" slot="hotspot-3" data-position="-10.062622817298239m 23.599813176776635m -4.446890686887441m"
+            data-normal="0.16295778259314359m 0.9840522864068365m -0.0713152067220132m"
+            data-visibility-attribute="visible">
+            <span class="HotspotAnnotation" id="hotspot-3"></span>
+          </button>
+
+          <button class="Hotspot" slot="hotspot-4" data-position="-9.784621723452212m 18.51236631488848m -3.5575901037286826m"
+            data-normal="0.023496913479732715m 0.9975847128781993m 0.06529293280282003m"
+            data-visibility-attribute="visible">
+            <span class="HotspotAnnotation" id="hotspot-4"></span>
+          </button>
+
+          <div class="progress-bar hide" slot="progress-bar">
+            <div class="update-bar"></div>
+          </div>
+
+          <button slot="ar-button" id="ar-button">View in your space</button>
+
+          <div id="ar-prompt">
+            <img src="images/ar_hand_prompt.png" alt="AR Prompt">
+          </div>
+        </model-viewer>
+      </section>
+
+    </main>
+
+    <footer class="foot">
+      <p>&copy; 2025 Cosmic Sounds. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
-
 </html>
+
