@@ -1,218 +1,748 @@
-p {
-    color: #000000;
-    font-size: 34px;
-    line-height: 44px;
-  }
-  
-  body {
-    margin: 0;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #ffffff;
-    color: #333;
-  }
+*,
+*::before,
+*::after {
+ box-sizing: border-box;
+}
 
-  header {
-    background-color: #111;
-    color: #fff;
-    padding: 1rem 2rem;
-    text-align: center;
-  }
-  
-  header h1 {
-    margin: 0;
-    font-size: 2rem;
-  }
-  
-  header p {
-    margin: 0.2rem 0 0;
-    font-size: 1rem;
-    font-weight: 300;
-    color: #5c5959;
-  }
-  
-  nav {
-    background-color: #9ca3d7;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    padding: 0.5rem 0;
-  }
-  
-  nav a {
-    color: #2f2b2b;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  
-  
-  main {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    text-align: center;
-  }
-  
-  footer {
-    background-color: #111;
-    color: #aaa;
-    text-align: center;
-    padding: 1rem 2rem;
-    margin-top: 3rem;
-    font-size: 0.9rem;
-  }
+body, html {
+ margin: 0;
+ padding: 0;
+ font-family: 'Helvetica Neue', Arial, sans-serif;
+ background-color: #111;
+ color: #eee;
+ overflow-x: hidden;
+}
 
-  model-viewer {
-    width: auto;
-    max-width: 1200px;
-    height: 700px;
-    background-color: #ffffff;
-    margin: 0 auto;
-  }
-  
-  .Hotspot {
-    background: url(../images/vecteezy_yellow-lightning-bolt-icon-on-circular-background-with-3d_69096699.png) center no-repeat;
-    background-size: 95%;
-    border: 0;
-    cursor: pointer;
-    width: 45px;
-    height: 39px;
-    transition: all 1s ease-in-out;
-  }
-  
+h1, h2, h3, h4, h5, p {
+ margin: 0;
+ padding: 0;
+}
 
-  .Hotspot:not([data-visibility-attribute]) {
-    opacity: 0;
-    width: 45px;
-    height: 38px;
-    pointer-events: none;
-  }
-  
-  .Hotspot:focus {
-    border: 4px solid rgb(0, 128, 200);
-    height: 32px;
-    outline: none;
-    width: 32px;
-  }
-  
-  .HotspotAnnotation {
-    visibility: hidden;
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-    color: rgba(0, 0, 0, 0.8);
-    display: block;
-    font-family: Futura, Helvetica Neue, sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    left: calc(100% + 1em);
-    max-width: 200px;
-    overflow-wrap: break-word;
-    padding: 0.5em 1em;
-    position: absolute;
-    top: 50%;
-    width: max-content;
-    text-align: left;
-  }
-  
-  .HotspotAnnotation p {
-    color: #333;
-    line-height: 22px;
-    font-weight: 300;
-  }
-  
-  .HotspotAnnotation h2 {
-    font-size: 18px;
-    margin-bottom: 5px;
-  } 
+img, canvas {
+ max-width: 100%;
+ display: block;
+}
 
-    /* Progress */
-    model-viewer::part(default-progress-bar) {
-      height: 30px;
-      background-color: #E89B36;
-    }
-    
-    model-viewer::part(default-progress-mask) {
-      display: none;
-  
-    }/*# sourceMappingURL=main.css.map */
-  
-  #explode-view {
-    max-width: 100%;
-    /* width: 100vw; */
-  }/*# sourceMappingURL=main.css.map */
 
-  #xray {
-    position: relative;
-    aspect-ratio: 16/10;
-    background-image: url(../images/earbuds-xray.png);
-    background-size: cover;
-    border-radius: 15px;
-  }
-  
-  #divisor {
-    position: absolute;
-    top: 0;
-    left: 0;
-    aspect-ratio: 16/10;
-    background-image: url(../images/earbuds-xray5.png);
-    background-size: cover;
-    width: 50%;
-    height: 100%;
-    border-radius: 15px;
-  }
-  #divisor::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    width: 6px;
-    height: 100%;
-    background-color: #fff;
-  }
-  
-  input[type=range] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    position: absolute;
-    left: -15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: calc(100% + 20px);
-    height: 20px;
-    background: transparent;
-  }
-  
-  input[type=range]::-webkit-slider-runnable-track {
-    height: 0;
-    background: transparent;
-    border: none;
-  }
-  
-  input[type=range]::-moz-range-track {
-    height: 0;
-    background: transparent;
-    border: none;
-  }
-  
-  input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #fff;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-  }
-  
-  input[type=range]::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    background: #fff;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-  }/*# sourceMappingURL=main.css.map */
+
+
+header {
+ background-color: #111;
+ padding: 1rem 2rem;
+ border-bottom: 1px solid #222;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ position: relative;
+ z-index: 100;
+}
+
+header .logo {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+header h1 {
+ width: 200px;
+ height: 60px;
+ background: url('../images/cosmic-full-logo.svg') no-repeat center;
+ background-size: contain;
+ text-indent: -9999px;
+ filter: brightness(0) invert(1);
+}
+
+header p {
+ font-size: 0.9rem;
+ color: #aaa;
+ margin-top: 0.2rem;
+}
+
+
+header.head {
+ position: sticky;
+ top: 0;
+ width: 100%;
+ z-index: 999;
+ border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav#main-menu {
+ display: flex;
+ gap: 2rem;
+}
+
+nav#main-menu a {
+ color: #eee;
+ font-weight: 600;
+ text-decoration: none;
+ transition: color 0.3s ease;
+}
+
+/* Hamburger for mobile */
+#hamburger {
+ display: none;
+ font-size: 32px;
+ background: none;
+ border: none;
+ color: #eee;
+ cursor: pointer;
+ z-index: 101;
+}
+
+/* Mobile overlay menu */
+.overlay {
+ display: none !important;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(0,0,0,0.95);
+ color: white;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ z-index: 1000;
+ transition: opacity 0.3s ease;
+}
+
+.overlay.open {
+ display: flex !important;
+ opacity: 1;
+}
+
+#close {
+ position: absolute;
+ top: 20px;
+ left: 20px;
+ font-size: 32px;
+ background: none;
+ border: none;
+ color: white;
+ cursor: pointer;
+}
+
+.overlay ul {
+ list-style: none;
+ text-align: center;
+ padding: 0;
+}
+
+.overlay li {
+ margin: 20px 0;
+}
+
+.overlay a {
+ color: white;
+ font-size: 32px;
+ text-decoration: none;
+ transition: color 0.3s ease;
+}
+
+.overlay a:hover {
+ color: var(--accent-color);
+}
+
+
+
+
+
+
+#home {
+ background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+ padding: 6rem 2rem;
+ position: relative;
+ overflow: hidden;
+}
+
+.hero-container {
+ display: grid;
+ grid-template-columns: repeat(12, 1fr);
+ align-items: center;
+ gap: 2rem;
+}
+
+.hero-text {
+ grid-column: 1 / 6;
+ color: #fff;
+ z-index: 2;
+ text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+
+.hero-text h2 {
+ font-size: 3.5rem;
+ line-height: 1.1;
+ margin-bottom: 1rem;
+}
+
+.hero-text p {
+ font-size: 1.5rem;
+ line-height: 1.8;
+ opacity: 0.85;
+}
+
+.banner-img {
+ grid-column: 7 / 12;
+ max-width: 450px;
+ margin: 0;
+ border-radius: 12px;
+ box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+ transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.banner-img:hover {
+ transform: scale(1.03);
+ box-shadow: 0 30px 90px rgba(0,0,0,0.8);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+ .hero-text { grid-column: 1 / 8; }
+ .hero-text h2 { font-size: 2.8rem; }
+ .hero-text p { font-size: 1.2rem; }
+ .banner-img { grid-column: 8 / 13; max-width: 300px; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+ .hero-container {
+   grid-template-columns: 1fr;
+   gap: 1rem;
+   padding: 2rem;
+ }
+
+ .hero-text {
+   grid-column: 1 / -1;
+   text-align: center;
+ }
+
+ .hero-text h2 { font-size: 2rem; line-height: 1.2; }
+ .hero-text p { font-size: 1rem; line-height: 1.4; }
+
+ .banner-img {
+   grid-column: 1 / -1;
+   max-width: 80%;
+   margin: 1rem auto 0;
+ }
+}
+
+
+
+
+
+
+
+#products {
+ background-color: #1a1a1a;
+ padding: 5rem 2rem;
+}
+
+#products h2 {
+ font-size: 2.8rem;
+ color: #fff;
+ margin-bottom: 1rem;
+}
+
+#products p {
+ color: #ddd;
+ font-size: 1.2rem;
+ line-height: 1.6;
+}
+
+
+
+
+
+
+#explode-section {
+ position: relative;
+ width: 100vw;
+ height: 200vh;
+ margin: 0;
+ padding: 0;
+ overflow: hidden;
+ display: flex;
+ justify-content: center;
+ align-items: flex-start;
+ background-color: white;
+}
+
+#explode-view {
+ position: sticky;
+ top: 0;
+ width: 100%;
+ max-width: 1920px;
+ height: 100vh;
+ margin: 0 auto;
+}
+
+
+
+
+
+
+#features {
+ padding: 6rem 2rem;
+ background-color: #111;
+ color: #fff;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 3rem;
+}
+
+#features .content {
+ max-width: 800px;
+ text-align: center;
+ padding: 2rem;
+ background: rgba(255, 255, 255, 0.05);
+ border-radius: 15px;
+ box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+ backdrop-filter: blur(8px);
+ transition: transform 0.3s ease;
+}
+
+#features .content:hover { transform: translateY(-5px); }
+
+#features h2 {
+ font-size: 2.8rem;
+ font-weight: 700;
+ color: #fff;
+ margin-bottom: 1.5rem;
+ letter-spacing: 1px;
+}
+
+#features p {
+ font-size: 1.2rem;
+ line-height: 1.8;
+ color: #ccc;
+ margin: 0;
+}
+
+
+
+
+
+#xray {
+ position: relative;
+ aspect-ratio: 16/10;
+ width: 100%;
+ max-width: 1200px;
+ margin: 2rem auto;
+ background-image: url('../images/earbuds-xray.png');
+ background-size: cover;
+ border-radius: 15px;
+ box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+}
+
+#divisor {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 50%;
+ height: 100%;
+ background-image: url('../images/earbuds-xray1.png');
+ background-size: cover;
+ border-radius: 15px;
+}
+
+#divisor::after {
+ content: "";
+ position: absolute;
+ right: 0;
+ width: 6px;
+ height: 100%;
+ background-color: #fff;
+}
+
+input[type=range] {
+ width: calc(100% + 20px);
+ position: absolute;
+ top: 100%;
+ transform: translateY(-50%);
+}
+
+
+
+
+
+
+#buds-con {
+ background-color: #111;
+ padding: 3rem 2rem;
+ border-radius: 15px;
+ margin: 2rem 0;
+ color: #fff;
+}
+
+#color-con button {
+ width: 25px;
+ height: 25px;
+ border-radius: 50%;
+ border: none;
+ margin-right: 10px;
+ cursor: pointer;
+ transition: transform 0.3s ease;
+}
+
+#color-con button:hover { transform: scale(1.1); }
+
+#beige  { background-color: beige; }
+#green { background-color: green; }
+#blue  { background-color: blue; }
+#pink  { background-color: pink; }
+
+.color-label {
+ font-size: 1rem;
+ margin-top: 10px;
+ color: #eee;
+ font-weight: 600;
+ opacity: 0;
+ transition: opacity 0.2s ease;
+}
+
+.color-label.show { opacity: 1; }
+
+.buy-btn {
+ margin-top: 2rem;
+ padding: 1rem 2rem;
+ font-size: 1rem;
+ font-weight: 700;
+ color: #111;
+ background-color: #fff;
+ border: none;
+ border-radius: 25px;
+ cursor: pointer;
+ transition: all 0.3s ease;
+}
+
+.buy-btn:hover {
+ background-color: #f0f0f0;
+ transform: translateY(-3px);
+ box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.buy-btn::after {
+ content: "→";
+ margin-left: 0.5rem;
+ font-weight: bold;
+ transition: margin-left 0.3s ease;
+}
+
+.buy-btn:hover::after {
+ margin-left: 1rem;
+}
+
+
+
+
+
+#earbuds-model {
+ width: 100%;
+ max-width: 1200px;
+ height: 700px;
+ background-color: #111;
+ border-radius: 15px;
+ box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+ margin: 3rem auto;
+ position: relative;
+ display: block;
+}
+
+.Hotspot {
+ position: absolute;
+ z-index: 5;
+ padding: 10px 15px;
+ background: #fff;
+ border-radius: 8px;
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ gap: 5px;
+ box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+ cursor: pointer;
+}
+
+.Hotspot::before {
+ content: "";
+ display: block;
+ width: 25px;
+ height: 25px;
+ background: url('../images/vecteezy_yellow-lightning-bolt-icon-on-circular-background-with-3d_69096699.png') center no-repeat;
+ background-size: contain;
+}
+
+.Hotspot:focus {
+ outline: none;
+ border: 3px solid var(--accent-color, #4285f4);
+ width: 48px;
+ height: 42px;
+}
+
+.Hotspot:not([data-visibility-attribute]) {
+ opacity: 0;
+ pointer-events: none;
+}
+
+.HotspotAnnotation {
+ visibility: visible;
+ opacity: 1;
+ color: #111;
+ font-size: 14px;
+ font-weight: 700;
+ white-space: normal;
+ text-align: left;
+ max-width: 200px;
+}
+
+.Hotspot[data-visibility-attribute="visible"] > .HotspotAnnotation {
+ transform: translateY(-50%);
+}
+
+#ar-button {
+ position: absolute;
+ bottom: 1rem;
+ left: 50%;
+ transform: translateX(-50%);
+ height: 36px;
+ padding: 0 2.5em 0 1.5em;
+ background-color: #fff;
+ color: var(--accent-color, #4285f4);
+ font-size: 14px;
+ font-weight: 600;
+ line-height: 36px;
+ border-radius: 18px;
+ border: 1px solid #DADCE0;
+ cursor: pointer;
+ white-space: nowrap;
+ z-index: 10;
+}
+
+#ar-button:active { background-color: #E8EAED; }
+#ar-button:focus-visible { outline: 2px solid var(--accent-color, #4285f4); }
+
+
+
+
+@keyframes circle {
+ from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
+ to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+}
+
+@keyframes elongate {
+ from { transform: translateX(100px); }
+ to   { transform: translateX(-100px); }
+}
+
+model-viewer > #ar-prompt {
+ position: absolute;
+ left: 50%;
+ bottom: 60px;
+ display: none;
+ animation: elongate 2s infinite ease-in-out alternate;
+ z-index: 5;
+}
+
+model-viewer[ar-status="session-started"] > #ar-prompt { display: block; }
+model-viewer > #ar-prompt > img { animation: circle 4s linear infinite; }
+
+.progress-bar {
+ width: 33%;
+ height: 2%;
+ position: absolute;
+ left: 50%;
+ top: 50%;
+ transform: translate(-50%, -50%);
+ border-radius: 25px;
+ background-color: rgba(255,255,255,0.1);
+ border: 1px solid rgba(255,255,255,0.3);
+ z-index: 2;
+}
+
+.update-bar {
+ background-color: var(--accent-color, #fff);
+ width: 0;
+ height: 100%;
+ border-radius: 25px;
+ transition: width 0.3s ease;
+}
+
+.progress-bar.hide { visibility: hidden; }
+
+
+
+
+
+
+#mobile-fallback {
+ display: none;
+ text-align: center;
+ padding: 2rem;
+}
+
+#mobile-fallback .mobile-poster {
+ max-width: 90%;
+ border-radius: 12px;
+ box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+ margin-bottom: 1.5rem;
+}
+
+#mobile-fallback .mobile-hotspot-list {
+ list-style: none;
+ padding: 0;
+ color: #eee;
+ font-weight: 600;
+ font-size: 1rem;
+ line-height: 1.8;
+}
+
+#mobile-fallback .mobile-hotspot-list li {
+ margin-bottom: 0.8rem;
+ background: #222;
+ padding: 0.8rem 1rem;
+ border-radius: 8px;
+}
+
+
+
+
+
+
+#newsletter {
+ background-color: #1a1a1a;
+ padding: 2rem 2.5rem;
+ max-width: 1100px;
+ margin: 4rem auto;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 2rem;
+ box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+#newsletter .newsletter-text {
+ flex: 3;
+ color: #fff;
+}
+
+#newsletter h2 {
+ font-size: 2rem;
+ font-weight: 700;
+ margin-bottom: 0.5rem;
+ line-height: 1.2;
+}
+
+#newsletter p {
+ font-size: 1rem;
+ color: #ccc;
+ line-height: 1.5;
+}
+
+#newsletter .cta-btn {
+ flex: 1;
+ background-color: #fff;
+ color: #111;
+ font-weight: 700;
+ font-size: 1rem;
+ padding: 1rem 2rem;
+ border-radius: 25px;
+ border: none;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ text-align: center;
+}
+
+#newsletter .cta-btn:hover {
+ background-color: #f0f0f0;
+ transform: translateY(-3px);
+ box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+#newsletter .cta-btn::after {
+ content: "→";
+ margin-left: 0.5rem;
+ font-weight: bold;
+ transition: margin-left 0.3s ease;
+}
+
+#newsletter .cta-btn:hover::after { margin-left: 1rem; }
+
+
+
+
+
+
+footer.foot {
+ background-color: #111;
+ color: #ccc;
+ font-size: 0.95rem;
+ padding: 3rem 2rem;
+ text-align: center;
+ border-top: 1px solid #222;
+ letter-spacing: 0.5px;
+ position: relative;
+ z-index: 10;
+}
+
+
+
+
+
+
+
+@media (max-width: 1024px) {
+ #newsletter {
+   padding: 1.5rem 2rem;
+   gap: 1.5rem;
+ }
+
+ #newsletter h2 { font-size: 1.8rem; }
+ #newsletter p { font-size: 0.95rem; }
+ #newsletter .cta-btn { padding: 0.9rem 1.8rem; font-size: 0.95rem; }
+
+ #earbuds-model { height: 60vh; }
+ .HotspotAnnotation { font-size: 14px; max-width: 150px; left: calc(100% + 0.3em); }
+
+ .buy-btn {
+   padding: 0.9rem 1.8rem;
+   font-size: 0.95rem;
+ }
+}
+
+@media (max-width: 768px) {
+ #newsletter {
+   padding: 1rem 1.5rem;
+   gap: 1rem;
+ }
+
+ #newsletter h2 { font-size: 1.6rem; }
+ #newsletter p { font-size: 0.9rem; }
+ #newsletter .cta-btn { padding: 0.8rem 1.5rem; font-size: 0.9rem; }
+
+ #hero-container { grid-template-columns: 1fr; padding: 2rem; }
+ .hero-text { text-align: center; }
+ .hero-text h2 { font-size: 2rem; }
+ .hero-text p { font-size: 1rem; line-height: 1.4; }
+ .banner-img { max-width: 80%; margin: 1rem auto 0; }
+
+ #earbuds-model { display: none; }
+ #mobile-fallback { display: block; }
+
+ #hamburger { display: block; }
+ nav#main-menu { display: none; }
+
+ #explode-section { display: none; }
+ .HotspotAnnotation { font-size: 12px; max-width: 120px; left: calc(100% + 0.3em); }
+
+ .buy-btn {
+   padding: 0.8rem 1.5rem;
+   font-size: 0.9rem;
+ }
+ .buy-color-btn {
+   margin-top: 1rem;
+ }
+}
 
  
 
