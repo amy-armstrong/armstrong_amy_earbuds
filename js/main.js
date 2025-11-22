@@ -1,145 +1,177 @@
-(()=> {
-    console.log("IIFE Called");
-
-    const canvas = document.querySelector("#explode-view");
-    const context = canvas.getContext("2d");
-
-    const hotspots = document.querySelectorAll(".Hotspot");
-
-    const infoBoxes = [
-        {
+(() => {
+  const menu = document.querySelector("#menu");
+  const hamburger = document.querySelector("#hamburger");
+  const closebutton = document.querySelector("#close");
+  const menuLinks = document.querySelectorAll("#menu nav ul li a");
+ 
+ 
+  function toggleMenu() {
+      menu.classList.toggle("open");
+  }
+ 
+ 
+  closebutton.addEventListener("click", toggleMenu);
+  hamburger.addEventListener("click", toggleMenu);
+  menuLinks.forEach(link => link.addEventListener("click", toggleMenu));
+ 
+ 
+  const canvas = document.querySelector("#explode-view");
+  const context = canvas.getContext("2d");
+ 
+ 
+  const frameCount = 236;
+  const images = [];
+  const buds = { frame: 0 };
+ 
+ 
+  canvas.width = 1920;
+  canvas.height = 1080;
+ 
+ 
+  for (let i = 0; i < frameCount; i++) {
+      const img = new Image();
+      img.src = `images/cosmic_earbuds${(i + 1).toString().padStart(3, '0')}.webp`;
+      images.push(img);
+  }
+ 
+ 
+  function render() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.drawImage(images[buds.frame], 0, 0);
+  }
+ 
+ 
+  gsap.to(buds, {
+      frame: frameCount - 1,
+      snap: "frame",
+      scrollTrigger: {
+          trigger: "#explode-view",
+          pin: true,
+          scrub: 1,
+          start: "top top",
+          markers: true
+      },
+      onUpdate: render
+  });
+ 
+ 
+  images[0].addEventListener("load", render);
+ 
+ 
+  const divisor = document.querySelector("#divisor");
+  const slider = document.querySelector("#slider");
+ 
+ 
+  function moveDivisor() {
+      divisor.style.width = `${slider.value}%`;
+  }
+ 
+ 
+  function resetSlider() {
+      slider.value = 50;
+      moveDivisor();
+  }
+ 
+ 
+  slider.addEventListener("input", moveDivisor);
+  window.addEventListener("load", resetSlider);
+ 
+ 
+  const hotspots = document.querySelectorAll(".Hotspot");
+  const infoBoxes = [
+      {
           image: "images/white_cloud.png",
           title: "Noise-cancelling",
           text: "Reduces external noise for immersive listening."
-        },
-        {
+      },
+      {
           image: "images/white_cloud.png",
           title: "Touch Controls",
           text: "Play/pause, skip tracks, answer calls, volume adjustments with taps or swipes."
-        },
-        {
+      },
+      {
           image: "images/white_cloud.png",
           title: "Lightweight & Compact",
           text: "Comfortable for long wear."
-        },
-        {
+      },
+      {
           image: "images/white_cloud.png",
           title: "Sweat & Water Resistance",
           text: "IPX4/IPX7 for workouts and outdoor use."
-        }
-      ]
-
-    canvas.width= 1920;
-    canvas.height = 1080;
-
-    //How many still frames do we have, you will need to adjust this
-    const frameCount = 236; 
-
-    //array to hold our images
-    const images = [];
-
-    //object will hold the current frame
-    //we will use GreenSock to animate the frame property
-    const buds = {
-        frame: 0
-    }
-
-    const divisor = document.querySelector("#divisor");
-    const slider = document.querySelector("#slider");
-
-
-    //Run a for loop to populate images array
-    for (let i=0; i<frameCount; i++) {
-        const img = new Image();
-        img.src = `images/cosmic_earbuds${(i+1).toString().padStart(4, '0')}.webp`;
-        images.push(img);
-    }
-    console.log(images);
-
-    gsap.to(buds, {
-        frame: 235,
-        snap: "frame",
-        scrollTrigger: {
-            trigger: "#explode-view",
-            pin: true,
-            scrub: 1,
-            start: "top top",
-            markers: true
-        },
-        onUpdate: render
-    })
-
-    images[0].addEventListener("load", render);
-    slider.addEventListener("input", moveDivisor);
-    window.addEventListener("load", resetSlider);
-    hotspots.forEach(function (hotspot) {
-        hotspot.addEventListener("mouseenter", showInfo);
-        hotspot.addEventListener("mouseleave", hideInfo);
-      });
-
-    function render() {
-        //console.log(buds.frame);
-        //console.log(images[buds.frame]);
-        context.clearRect(0,0, canvas.width, canvas.height);
-        context.drawImage(images[buds.frame], 0, 0);
-    }
-
-    function moveDivisor() {
-        // console.log(slider.value);
-        divisor.style.width = `${slider.value}%`;
-    }
-
-    function resetSlider() {
-        slider.value = 50;
-    }
-
-    function loadInfo() {
-        infoBoxes.forEach((infoBox, index)=>{
-          // console.log(index+1);
-          //selected will be the inforBox on our page, e.g.hotspot-1, hotspot-2, etc.
-          let selected = document.querySelector(`#hotspot-${index+1}`);
-          console.log(selected);
-    
-          //lets create an img
-          const imageElement = document.createElement('img');
-          //lets populate the img
-          imageElement.src = infoBox.image;
-    
-          //lets create an h2
-          const titleElement = document.createElement('h2');
-          //lets populate the h2
-          titleElement.textContent = infoBox.title;
-    
-          //lets create a p
-          const textElement = document.createElement('p');
-          //lets populate the p
-          textElement.textContent = infoBox.text;
-    
-  
-          //lets add the h2 to the selected hotspot
-          selected.appendChild(titleElement);
-          //lets add the p to the selected hotspot
-          selected.appendChild(textElement);
-          //lets add the img to the selected hotspot
-          selected.appendChild(imageElement);
-    
-        });
       }
-      loadInfo();
-  
-      function showInfo() {
-       //console.log(this.slot);
-       //console.log(`#${this.slot}`);
-       //since the slot value matches the id value I can use the slot value as a selector to get to the div I want.
-       let selected = document.querySelector(`#${this.slot}`);
-       gsap.to(selected, { duration: 1, autoAlpha: 1 });
-     }
-   
-     function hideInfo() {
-       //console.log(this.slot);
-       //console.log(`#${this.slot}`);
-       let selected = document.querySelector(`#${this.slot}`);
-       gsap.to(selected, { duration: 1, autoAlpha: 0 });
-     }
-
-})();
+  ];
+ 
+ 
+  function loadInfo() {
+      infoBoxes.forEach((infoBox, index) => {
+          const selected = document.querySelector(`#hotspot-${index + 1}`);
+          const img = document.createElement('img');
+          img.src = infoBox.image;
+ 
+ 
+          const title = document.createElement('h2');
+          title.textContent = infoBox.title;
+ 
+ 
+          const text = document.createElement('p');
+          text.textContent = infoBox.text;
+ 
+ 
+          selected.appendChild(title);
+          selected.appendChild(text);
+          selected.appendChild(img);
+      });
+  }
+  loadInfo();
+ 
+ 
+  function showInfo() {
+      const selected = document.querySelector(`#${this.slot}`);
+      gsap.to(selected, { duration: 1, autoAlpha: 1 });
+  }
+ 
+ 
+  function hideInfo() {
+      const selected = document.querySelector(`#${this.slot}`);
+      gsap.to(selected, { duration: 1, autoAlpha: 0 });
+  }
+ 
+ 
+  hotspots.forEach(hotspot => {
+      hotspot.addEventListener("mouseenter", showInfo);
+      hotspot.addEventListener("mouseleave", hideInfo);
+  });
+ 
+ 
+  const earbuds = document.querySelector("#ear-buds");
+  const buttons = document.querySelectorAll("#color-con button");
+ 
+ 
+  function swapColor(e) {
+      earbuds.src = `images/earbuds-${e.currentTarget.id}.png`;
+  }
+ 
+ 
+  buttons.forEach(button => button.addEventListener("click", swapColor));
+ 
+ 
+  const colorButtons = document.querySelectorAll("#color-con button");
+  const colorLabel = document.querySelector("#color-label");
+ 
+ 
+  colorButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+          const selectedColor = btn.getAttribute("data-color");
+          colorLabel.textContent = selectedColor;
+ 
+ 
+          colorLabel.classList.add("show");
+ 
+ 
+          setTimeout(() => colorLabel.classList.remove("show"), 2000);
+      });
+  });
+ 
+ 
+ })();
+ 
