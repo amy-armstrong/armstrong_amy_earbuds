@@ -11,10 +11,11 @@
 
 <body>
   <div class="site">
+    <!-- HEADER -->
     <header class="head">
       <div class="logo">
         <h1>Cosmic Sounds</h1>
-        <p>Experience your music like never before.</p>
+        <p>SOUND OUT OF THIS WORLD</p>
       </div>
 
       <nav id="main-menu">
@@ -24,17 +25,48 @@
         <a href="#features">Features</a>
         <a href="#contact">Contact</a>
       </nav>
+
+      <!-- Hamburger Menu -->
+      <button id="hamburger">&#9776;</button>
     </header>
 
-    <main class="main">
-      <section id="home" class="one-item md-one-item lg-one-item">
-        <h2>Welcome to Cosmic Sounds</h2>
-        <p>Experience your music like never before.</p>
-      </section>
+    <!-- Mobile Overlay Menu -->
+    <div id="menu" class="overlay">
+      <button id="close">&times;</button>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
 
-      <section id="products" class="two-items md-two-items lg-two-items">
-        <div class="content">
-          <h2>Cosmic Sound Halo</h2>
+ <!-- EXPLODE CANVAS -->
+<section id="explode-section">
+  <canvas id="explode-view"></canvas>
+</section>
+
+
+
+    <!-- HERO SECTION -->
+    <section id="home" class="one-item md-one-item lg-one-item">
+      <div class="grid-con hero-container">
+        <div class="col-span-full m-col-start-2 m-col-end-7 l-col-start-3 l-col-end-7 hero-text">
+          <h2>Welcome to Cosmic Sounds</h2>
+          <p>Experience your music like never before.</p>
+        </div>
+        <img src="images/earbuds-pink.png" alt="Halo Earbuds Banner" class="banner-img">
+      </div>
+    </section>
+
+    <!-- PRODUCTS + COLOUR SELECTOR -->
+    <section id="products" class="two-items md-two-items lg-two-items">
+      <div class="grid-con">
+        <!-- Left Column: Product Info -->
+        <div class="col-span-full m-col-start-2 m-col-end-7 l-col-start-3 l-col-end-7 content">
+          <h2>Cosmic Sound Halo Buds</h2>
           <p>
             Meet the Cosmic Sound Halo — engineered for balance, clarity, and depth. 
             Halo delivers a listening experience that feels effortless yet extraordinary. 
@@ -43,89 +75,122 @@
           </p>
         </div>
 
-        <div>
-          <canvas id="explode-view"></canvas>
+        <!-- Right Column: Colour Selector -->
+        <div class="col-span-full m-col-start-7 m-col-end-12 l-col-start-8 l-col-end-12" id="buds-con">
+          <h2>Select Your Colour</h2>
+          <section id="color-con">
+            <button id="beige" data-color="Beige"></button>
+            <button id="green" data-color="Green"></button>
+            <button id="blue" data-color="Blue"></button>
+            <button id="pink" data-color="Pink"></button>
+          </section>
+          <p id="color-label" class="color-label"></p>    
+          <img src="images/earbuds-beige.png" id="ear-buds">   
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="features" class="two-items md-two-items lg-two-items">
-        <div class="content">
-          <h2>Inside the Tech</h2>
-          <p>
-            Your ultimate earbuds experience starts here. 
-            Explore our 3D models, internal components, and immersive sound quality.
-          </p>
+
+    <!-- FEATURES / XRAY -->
+    <section id="features" class="two-items md-two-items lg-two-items">
+      <div class="content">
+        <h2>Inside the Tech</h2>
+        <p>
+          Discover the engineering marvels behind the Cosmic Sound Halo earbuds. 
+          Every detail has been meticulously designed to deliver unparalleled audio clarity, 
+          from precision-built drivers to adaptive acoustic tuning. Explore our interactive 3D models, 
+          get an inside look at the cutting-edge internal components, and experience how comfort, 
+          performance, and innovation come together to create a truly immersive listening journey.
+        </p>
+      </div>
+
+      <div id="xray">
+        <div id="divisor"></div>
+        <input type="range" min="0" max="100" value="50" id="slider">
+      </div>
+    </section>
+
+    <!-- MODEL VIEWER -->
+    <section class="model-section">
+      <div class="content">
+        <h2>Halo Buds</h2>
+        <p>
+          Check out the innovative features of our latest Halo Pods. 
+          Rotate, zoom, and explore every detail of the earbuds with our interactive 3D model.
+        </p>
+      </div>
+    
+      <model-viewer id="model" 
+        src="model/green_earbuds.gltf"
+        camera-controls
+        ar
+        ar-modes="scene-viewer quick-look webxr"
+        poster="images/poster.webp"
+        shadow-intensity="1"
+        exposure="1.7"
+        environment-image="images/aircraft_workshop_01_1k.hdr">
+    
+        <button class="Hotspot" slot="hotspot-1" data-position="-10.909943128872948m 20.155882275595552m -2.1910943656423716m"
+          data-normal="0.09298874876324785m 0.435755841014398m 0.8952485351148476m"
+          data-visibility-attribute="visible">
+          <span class="HotspotAnnotation" id="hotspot-1">Driver</span>
+        </button>
+    
+        <button class="Hotspot" slot="hotspot-2" data-position="-10.298127586058435m 22.105992371741152m -8.00153119605012m"
+          data-normal="-0.774790312222615m 0.46145446072383095m -0.43215709269206876m"
+          data-visibility-attribute="visible">
+          <span class="HotspotAnnotation" id="hotspot-2">Battery</span>
+        </button>
+    
+        <button class="Hotspot" slot="hotspot-3" data-position="-10.062622817298239m 23.599813176776635m -4.446890686887441m"
+          data-normal="0.16295778259314359m 0.9840522864068365m -0.0713152067220132m"
+          data-visibility-attribute="visible">
+          <span class="HotspotAnnotation" id="hotspot-3">Mic</span>
+        </button>
+    
+        <button class="Hotspot" slot="hotspot-4" data-position="-9.784621723452212m 18.51236631488848m -3.5575901037286826m"
+          data-normal="0.023496913479732715m 0.9975847128781993m 0.06529293280282003m"
+          data-visibility-attribute="visible">
+          <span class="HotspotAnnotation" id="hotspot-4">Sensors</span>
+        </button>
+    
+        <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
         </div>
-
-        <div id="xray">
-          <div id="divisor"></div>
-          <input type="range" min="0" max="100" value="50" id="slider">
+    
+        <button slot="ar-button" id="ar-button">View in your space</button>
+    
+        <div id="ar-prompt">
+          <img src="images/ar_hand_prompt.png" alt="AR Prompt">
         </div>
-      </section>
+      </model-viewer>
+    </section>
+    
 
-      <section class="one-item md-one-item lg-one-item">
-        <div class="content">
-          <h2>Halo Buds</h2>
-          <p>Check out the innovative features of our latest Halo Pods.</p>
+    <!-- NEWSLETTER -->
+    <section id="newsletter">
+      <div class="grid-con">
+        <div class="col-span-full m-col-start-2 m-col-end-7 l-col-start-3 l-col-end-7 newsletter-text">
+          <h2>Be the First to Know</h2>
+          <p>Stay updated on the latest Halo earbuds drops, exclusive releases, and special events.</p>
+          <button class="cta-btn">Sign Up</button>
         </div>
+      </div>
+    </section>
 
-        <model-viewer id="model" 
-          src="model/earbuds.glb"
-          camera-controls
-          tone-mapping="neutral"
-          poster="images/poster.webp"
-          shadow-intensity="1"
-          exposure="1.7"
-          environment-image="images/aircraft_workshop_01_1k.hdr">
-
-          <button class="Hotspot" slot="hotspot-1" data-position="-10.909943128872948m 20.155882275595552m -2.1910943656423716m"
-            data-normal="0.09298874876324785m 0.435755841014398m 0.8952485351148476m"
-            data-visibility-attribute="visible">
-            <span class="HotspotAnnotation" id="hotspot-1"></span>
-          </button>
-
-          <button class="Hotspot" slot="hotspot-2" data-position="-10.298127586058435m 22.105992371741152m -8.00153119605012m"
-            data-normal="-0.774790312222615m 0.46145446072383095m -0.43215709269206876m"
-            data-visibility-attribute="visible">
-            <span class="HotspotAnnotation" id="hotspot-2"></span>
-          </button>
-
-          <button class="Hotspot" slot="hotspot-3" data-position="-10.062622817298239m 23.599813176776635m -4.446890686887441m"
-            data-normal="0.16295778259314359m 0.9840522864068365m -0.0713152067220132m"
-            data-visibility-attribute="visible">
-            <span class="HotspotAnnotation" id="hotspot-3"></span>
-          </button>
-
-          <button class="Hotspot" slot="hotspot-4" data-position="-9.784621723452212m 18.51236631488848m -3.5575901037286826m"
-            data-normal="0.023496913479732715m 0.9975847128781993m 0.06529293280282003m"
-            data-visibility-attribute="visible">
-            <span class="HotspotAnnotation" id="hotspot-4"></span>
-          </button>
-
-          <div class="progress-bar hide" slot="progress-bar">
-            <div class="update-bar"></div>
-          </div>
-
-          <button slot="ar-button" id="ar-button">View in your space</button>
-
-          <div id="ar-prompt">
-            <img src="images/ar_hand_prompt.png" alt="AR Prompt">
-          </div>
-        </model-viewer>
-      </section>
-
-    </main>
-
+    <!-- FOOTER -->
     <footer class="foot">
       <p>&copy; 2025 Cosmic Sounds. All rights reserved.</p>
     </footer>
-
   </div>
 
+  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
+
+
 
