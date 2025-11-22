@@ -11,7 +11,6 @@
 
 <body>
   <div class="site">
-    <!-- HEADER -->
     <header class="head">
       <div class="logo">
         <h1>Cosmic Sounds</h1>
@@ -25,12 +24,9 @@
         <a href="#features">Features</a>
         <a href="#contact">Contact</a>
       </nav>
-
-      <!-- Hamburger Menu -->
       <button id="hamburger">&#9776;</button>
     </header>
 
-    <!-- Mobile Overlay Menu -->
     <div id="menu" class="overlay">
       <button id="close">&times;</button>
       <nav>
@@ -43,14 +39,10 @@
       </nav>
     </div>
 
- <!-- EXPLODE CANVAS -->
 <section id="explode-section">
   <canvas id="explode-view"></canvas>
 </section>
 
-
-
-    <!-- HERO SECTION -->
     <section id="home" class="one-item md-one-item lg-one-item">
       <div class="grid-con hero-container">
         <div class="col-span-full m-col-start-2 m-col-end-7 l-col-start-3 l-col-end-7 hero-text">
@@ -61,10 +53,8 @@
       </div>
     </section>
 
-    <!-- PRODUCTS + COLOUR SELECTOR -->
     <section id="products" class="two-items md-two-items lg-two-items">
       <div class="grid-con">
-        <!-- Left Column: Product Info -->
         <div class="col-span-full m-col-start-2 m-col-end-7 l-col-start-3 l-col-end-7 content">
           <h2>Cosmic Sound Halo Buds</h2>
           <p>
@@ -73,9 +63,9 @@
             With adaptive acoustic tuning and precision-built drivers, every note stays true to its source. 
             Quiet comfort meets lasting performance — so you can focus on what matters most: the sound.
           </p>
+          <button class="buy-btn">Buy Now</button>
         </div>
 
-        <!-- Right Column: Colour Selector -->
         <div class="col-span-full m-col-start-7 m-col-end-12 l-col-start-8 l-col-end-12" id="buds-con">
           <h2>Select Your Colour</h2>
           <section id="color-con">
@@ -85,13 +75,11 @@
             <button id="pink" data-color="Pink"></button>
           </section>
           <p id="color-label" class="color-label"></p>    
-          <img src="images/earbuds-beige.png" id="ear-buds">   
+          <img src="images/earbuds-beige.png" alt="Earbuds" id="ear-buds"> 
         </div>
       </div>
     </section>
 
-
-    <!-- FEATURES / XRAY -->
     <section id="features" class="two-items md-two-items lg-two-items">
       <div class="content">
         <h2>Inside the Tech</h2>
@@ -110,64 +98,55 @@
       </div>
     </section>
 
-    <!-- MODEL VIEWER -->
-    <section class="model-section">
-      <div class="content">
-        <h2>Halo Buds</h2>
-        <p>
-          Check out the innovative features of our latest Halo Pods. 
-          Rotate, zoom, and explore every detail of the earbuds with our interactive 3D model.
-        </p>
-      </div>
-    
-      <model-viewer id="model" 
-        src="model/green_earbuds.gltf"
-        camera-controls
-        ar
-        ar-modes="scene-viewer quick-look webxr"
-        poster="images/poster.webp"
-        shadow-intensity="1"
-        exposure="1.7"
-        environment-image="images/aircraft_workshop_01_1k.hdr">
-    
-        <button class="Hotspot" slot="hotspot-1" data-position="-10.909943128872948m 20.155882275595552m -2.1910943656423716m"
-          data-normal="0.09298874876324785m 0.435755841014398m 0.8952485351148476m"
-          data-visibility-attribute="visible">
-          <span class="HotspotAnnotation" id="hotspot-1">Driver</span>
+  <div id="model-container">
+    <model-viewer 
+        id="earbuds-model" 
+        src="model/green_earbuds.gltf" 
+        ar 
+        ar-modes="webxr scene-viewer quick-look" 
+        camera-controls 
+        tone-mapping="neutral" 
+        poster="poster.webp" 
+        shadow-intensity="1" 
+        exposure="1">
+        
+        <button class="Hotspot" slot="hotspot-1" data-position="-18.8m 66.8m 24.1m" data-normal="-0.91m 0.39m 0.07m" data-visibility-attribute="visible">
+          <span class="HotspotAnnotation">Play/pause, skip tracks, answer calls, volume adjustments with taps or swipes.</span>
         </button>
-    
-        <button class="Hotspot" slot="hotspot-2" data-position="-10.298127586058435m 22.105992371741152m -8.00153119605012m"
-          data-normal="-0.774790312222615m 0.46145446072383095m -0.43215709269206876m"
-          data-visibility-attribute="visible">
-          <span class="HotspotAnnotation" id="hotspot-2">Battery</span>
+  
+        <button class="Hotspot" slot="hotspot-3" data-position="-23.7m 64.3m 23.2m" data-normal="-0.70m -0.12m 0.70m" data-visibility-attribute="visible">
+          <span class="HotspotAnnotation">Comfortable for long wear.</span>
         </button>
-    
-        <button class="Hotspot" slot="hotspot-3" data-position="-10.062622817298239m 23.599813176776635m -4.446890686887441m"
-          data-normal="0.16295778259314359m 0.9840522864068365m -0.0713152067220132m"
-          data-visibility-attribute="visible">
-          <span class="HotspotAnnotation" id="hotspot-3">Mic</span>
+  
+        <button class="Hotspot" slot="hotspot-4" data-position="-19.1m 65.7m 16.7m" data-normal="0.47m -0.23m -0.85m" data-visibility-attribute="visible">
+          <span class="HotspotAnnotation">Reduces external noise for immersive listening.</span>
         </button>
-    
-        <button class="Hotspot" slot="hotspot-4" data-position="-9.784621723452212m 18.51236631488848m -3.5575901037286826m"
-          data-normal="0.023496913479732715m 0.9975847128781993m 0.06529293280282003m"
-          data-visibility-attribute="visible">
-          <span class="HotspotAnnotation" id="hotspot-4">Sensors</span>
+  
+        <button class="Hotspot" slot="hotspot-5" data-position="-22.9m 65.4m 20.6m" data-normal="-0.76m 0.24m -0.61m" data-visibility-attribute="visible">
+          <span class="HotspotAnnotation">IPX4/IPX7 for workouts and outdoor use.</span>
         </button>
-    
+  
         <div class="progress-bar hide" slot="progress-bar">
           <div class="update-bar"></div>
         </div>
-    
+  
         <button slot="ar-button" id="ar-button">View in your space</button>
-    
         <div id="ar-prompt">
-          <img src="images/ar_hand_prompt.png" alt="AR Prompt">
+          <img src="ar_hand_prompt.png" alt="AR Hand Prompt">
         </div>
-      </model-viewer>
-    </section>
-    
+    </model-viewer>
+  
+    <div id="mobile-fallback">
+      <img src="images/poster.webp" alt="Green Earbuds" class="mobile-poster">
+      <ul class="mobile-hotspot-list">
+        <li>Play/pause, skip tracks, answer calls, volume adjustments with taps or swipes.</li>
+        <li>Comfortable for long wear.</li>
+        <li>Reduces external noise for immersive listening.</li>
+        <li>IPX4/IPX7 for workouts and outdoor use.</li>
+      </ul>
+    </div>
+  </div>
 
-    <!-- NEWSLETTER -->
     <section id="newsletter">
       <div class="grid-con">
         <div class="col-span-full m-col-start-2 m-col-end-7 l-col-start-3 l-col-end-7 newsletter-text">
@@ -178,13 +157,11 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="foot">
       <p>&copy; 2025 Cosmic Sounds. All rights reserved.</p>
     </footer>
   </div>
 
-  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>

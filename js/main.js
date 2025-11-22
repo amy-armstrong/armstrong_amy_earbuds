@@ -1,5 +1,4 @@
 (() => {
-  // --- Hamburger Menu ---
   const menu = document.querySelector("#menu");
   const hamburger = document.querySelector("#hamburger");
   const closebutton = document.querySelector("#close");
@@ -13,7 +12,6 @@
   hamburger.addEventListener("click", toggleMenu);
   menuLinks.forEach(link => link.addEventListener("click", toggleMenu));
 
-  // --- Exploding Earbuds Canvas ---
   const canvas = document.querySelector("#explode-view");
   const context = canvas.getContext("2d");
 
@@ -50,7 +48,6 @@
 
   images[0].addEventListener("load", render);
 
-  // --- X-ray Slider ---
   const divisor = document.querySelector("#divisor");
   const slider = document.querySelector("#slider");
 
@@ -66,7 +63,6 @@
   slider.addEventListener("input", moveDivisor);
   window.addEventListener("load", resetSlider);
 
-  // --- Hotspots ---
   const hotspots = document.querySelectorAll(".Hotspot");
   const infoBoxes = [
       {
@@ -125,7 +121,6 @@
       hotspot.addEventListener("mouseleave", hideInfo);
   });
 
-  // --- Earbud Color Swapping ---
   const earbuds = document.querySelector("#ear-buds");
   const buttons = document.querySelectorAll("#color-con button");
 
@@ -135,7 +130,6 @@
 
   buttons.forEach(button => button.addEventListener("click", swapColor));
 
-  // --- Color Name Popup Integration ---
   const colorButtons = document.querySelectorAll("#color-con button");
   const colorLabel = document.querySelector("#color-label");
 
@@ -146,7 +140,6 @@
 
           colorLabel.classList.add("show");
 
-          // Optional fade-out after 2 seconds
           setTimeout(() => colorLabel.classList.remove("show"), 2000);
       });
   });
